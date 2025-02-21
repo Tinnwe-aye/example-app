@@ -1,0 +1,28 @@
+apiResource is not include create and edit
+we need to create api for create and edit 
+Route::get('api/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('api/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
+---------------------------------
+need to create public/css/app.css and use in layouts/app.blade.css 
+nedd to restart php artisan serve
+
+----------------------------------
+
+php artisan make:migration create_posts_table
+php artisan make:controller PostController --model=Post --resource --requests
+create migration file and database - run php artisan migrate
+
+php artisan route:clear
+php artisan cache:clear
+php artisan config:clear
+php artisan route:list
+
+----------------------------------
+to upload project into git
+
+create git repo in git
+run on local project - git remote set-url origin https://github.com/MyRepo/project.git
+git add .
+git commit -m "initial commit"
+git push origin master
